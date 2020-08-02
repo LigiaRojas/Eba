@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
             child: Container(
               alignment: Alignment.bottomCenter,
               padding: const EdgeInsets.all(20.0),
-              //margin: const EdgeInsets.only(top: 90.0),
               child: Image.asset('images/Bienvenido.png'),
             ),
           ),
