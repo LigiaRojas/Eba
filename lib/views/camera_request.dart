@@ -29,6 +29,7 @@ class CameraRequest extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Canda Tawa Regular',
                     fontSize: 45.0,
+                    color: Color(0xff363839),
                   ),
                 ),
                 Text(
@@ -36,6 +37,7 @@ class CameraRequest extends StatelessWidget {
                   style: TextStyle(
                     fontFamily: 'Canda Tawa Regular',
                     fontSize: 75.0,
+                    color: Color(0xff363839),
                   ),
                 ),
               ],

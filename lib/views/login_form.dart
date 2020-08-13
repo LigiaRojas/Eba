@@ -37,6 +37,7 @@ class _LoginFormState extends State<LoginForm> {
                 style: TextStyle(
                   fontFamily: 'LeagueSpartan',
                   fontSize: 50.0,
+                  color: Color(0xff363839),
                 ),
               ),
             ),
