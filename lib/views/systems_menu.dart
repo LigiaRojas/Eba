@@ -118,6 +118,7 @@ class SystemsMenu extends StatelessWidget {
                             child: FlatButton(
                               onPressed: () {
                                 print('Right.');
+                                Navigator.pushNamed(context, '/unity-demo-screen');
                               },
                               child: Image.asset('images/right-arrow.png'),
                             ),
