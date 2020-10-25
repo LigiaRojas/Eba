@@ -26,20 +26,9 @@ public class LogoRecognition : MonoBehaviour
     {
         foreach (var trackedImage in args.added)
         {
-            Debug.Log("added");
+            Debug.Log(trackedImage.name);
         }
-        foreach (var trackedImage in args.updated)
-        {
-            Debug.Log("updated");
-        }
-    }
-    void Start()
-    {
-        
+
     }
 
-    void Update()
-    {
-        
-    }
 }

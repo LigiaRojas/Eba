@@ -6,7 +6,7 @@
     <meta-data android:name="unity.splash-mode" android:value="0" />
     <meta-data android:name="unity.splash-enable" android:value="True" />
     <meta-data android:name="notch.config" android:value="portrait|landscape" />
-    <meta-data android:name="unity.build-id" android:value="131f9b9c-6dac-4f7c-a84e-ac2e57b4c833" />
+    <meta-data android:name="unity.build-id" android:value="080130c1-a944-4a31-bc31-b2f06f9b38ab" />
     <meta-data android:name="unityplayer.SkipPermissionsDialog" android:value="true" />
     <meta-data android:name="com.google.ar.core" android:value="required" />
   </application>
