@@ -4,6 +4,7 @@ class CameraRequest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: Color(0xffaad4aa),
       body: Column(
         children: <Widget>[
@@ -109,7 +110,7 @@ class CameraRequest extends StatelessWidget {
                                 alignment: Alignment.bottomCenter,
                                 child: FlatButton(
                                   onPressed: () {
-                                    print('Funciona');
+                                    Navigator.pushNamed(context, '/unity-demo-screen');
                                   },
                                   child: Column(
                                     children: <Widget>[

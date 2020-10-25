@@ -4,6 +4,7 @@ class SystemsMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       backgroundColor: Color(0xffaad4aa),
       body: Column(
         children: <Widget>[
@@ -53,7 +54,7 @@ class SystemsMenu extends StatelessWidget {
             child: Column(
               children: <Widget>[
                 Expanded(
-                  flex: 3,
+                  flex: 5,
                   child: buildButton(
                     action: () => print('Óseo'),
                     left: Image.asset('images/bone.png'),
@@ -75,7 +76,7 @@ class SystemsMenu extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 5,
                   child: buildButton(
                     action: () => print('Reproductivo'),
                     left: Image.asset('images/reproductive.png'),
@@ -83,7 +84,7 @@ class SystemsMenu extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 3,
+                  flex: 5,
                   child: buildButton(
                     action: () => print('Digestivo'),
                     left: Image.asset('images/digestive.png'),
@@ -91,7 +92,7 @@ class SystemsMenu extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  flex: 2,
+                  flex: 3,
                   child: Row(
                     children: <Widget>[
                       Expanded(
@@ -102,7 +103,7 @@ class SystemsMenu extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 12.0, bottom: 20.0, right: 20.0),
                             child: FlatButton(
                                 onPressed: () {
-                                  print('Left.');
+                                  Navigator.pop(context);
                                 },
                                 child: Image.asset('images/left-arrow.png'),
                             ),
@@ -117,8 +118,7 @@ class SystemsMenu extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 12.0, bottom: 20.0, left: 20.0),
                             child: FlatButton(
                               onPressed: () {
-                                print('Right.');
-                                Navigator.pushNamed(context, '/unity-demo-screen');
+                                Navigator.pushNamed(context, '/videos-screen');
                               },
                               child: Image.asset('images/right-arrow.png'),
                             ),

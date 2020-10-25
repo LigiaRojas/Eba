@@ -4,6 +4,7 @@ class VideosScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Column(
         children: <Widget>[
           Expanded(
@@ -14,7 +15,7 @@ class VideosScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 35.0, bottom: 145.0, right: 100.0),
                 child: FlatButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/systems-menu');
+                    Navigator.pop(context);
                     print('Left.');
                   },
                   child: Image.asset('images/left-arrow.png'),
