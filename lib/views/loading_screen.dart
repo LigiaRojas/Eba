@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_session/flutter_session.dart';
+
 class LoadingScreen extends StatefulWidget {
 
   @override
@@ -8,11 +10,20 @@ class LoadingScreen extends StatefulWidget {
 
 class _LoadingScreenState extends State<LoadingScreen> {
 
+  void goToNextScreen() async {
+    var sessionId = await FlutterSession().get('id');
+    if (sessionId == null) {
+      Navigator.pushReplacementNamed(context, '/login-form');
+    } else {
+      Navigator.pushReplacementNamed(context, '/camera-request');
+    }
+  }
+
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      Navigator.pushNamed(context, '/camera-request');
+      goToNextScreen();
     });
   }
 
