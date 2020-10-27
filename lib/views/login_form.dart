@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
+import 'package:flutter_session/flutter_session.dart';
+import 'package:eba/database/driver.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -88,11 +90,11 @@ class LoginFormWidget extends StatefulWidget {
 class _LoginFormWidgetState extends State<LoginFormWidget> {
   final _formKey = GlobalKey<FormState>();
 
-  Map<String, String> _values = {
-    'age': '18',
-    'country': 'Colombia',
-    'department': 'Bogotá D.C.',
-    'city': 'Bogotá D.C.',
+  Map<String, dynamic> _values = {
+    'edad': 18,
+    'pais': 'Colombia',
+    'departamento': 'Bogotá D.C.',
+    'municipio': 'Bogotá D.C.',
   };
   List<String> _cities = [ 'Bogotá D.C.' ];
   bool _visible = true;
@@ -114,11 +116,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                   child: buildFormFieldSelector(
                     label: '¿Cuál es tu edad?',
                     hint: 'Edad (en años)',
-                    data: [ for (var i = 8; i < 100; i++) i.toString() ],
-                    value: _values['age'],
+                    data: [ for (var i = 6; i < 100; i++) i.toString() ],
+                    value: _values['edad'].toString(),
                     onChanged: (value) {
                       setState(() {
-                        _values['age'] = value;
+                        _values['edad'] = int.parse(value);
                       });
                     }
                   ),
@@ -133,11 +135,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     label: '¿En qué país resides?',
                     hint: 'País de residencia',
                     data: countries,
-                    value: _values['country'],
+                    value: _values['pais'],
                     onChanged: (value) {
                       setState(() {
                         _visible = value == 'Colombia';
-                        _values['country'] = value;
+                        _values['pais'] = value;
                       });
                     },
                   ),
@@ -154,13 +156,13 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                       label: '¿En qué departamento?',
                       hint: 'Departamento de residencia',
                       data: departments,
-                      value: _values['department'],
+                      value: _values['departamento'],
                       onChanged: (value) {
                         setState(() {
-                          _values['department'] = value;
-                          _values['city'] = null;
+                          _values['departamento'] = value;
+                          _values['municipio'] = null;
                           _cities = citiesMap[value];
-                          _values['city'] = _cities[0];
+                          _values['municipio'] = _cities[0];
                         });
                       },
                     ),
@@ -174,10 +176,10 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                       label: '¿Y en qué municipio?',
                       hint: 'Municipio de residencia',
                       data: _cities,
-                      value: _values['city'],
+                      value: _values['municipio'],
                       onChanged: (value) {
                         setState(() {
-                          _values['city'] = value;
+                          _values['municipio'] = value;
                         });
                       },
                     ),
@@ -187,17 +189,12 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     flex: _visible ? 1 : 2,
                     child: buildSubmitFormButton(() {
                       if (_formKey.currentState.validate()) {
-                        // TODO
-//                        if (_values['country'] != 'Colombia') {
-//                          _values['department'] = '';
-//                          _values['city'] = '';
-//                        }
-                        print('--------------------------');
-                        print('Edad: ${_values['age']}');
-                        print('Pais: ${_values['country']}');
-                        print('Departamento: ${_values['department']}');
-                        print('Ciudad: ${_values['city']}');
-                        print('--------------------------');
+                        if (_values['pais'] != 'Colombia') {
+                          _values.remove('departamento');
+                          _values.remove('municipio');
+                        }
+                        login(_values);
+                        Navigator.pushReplacementNamed(context, '/camera-request');
                       }
                     })
                 ),
@@ -210,6 +207,12 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         )
     );
   }
+}
+
+void login(Map<String, dynamic> values) async {
+  String id = await Driver().login(values);
+  await FlutterSession().set('id', id);
+  await Driver().closeConnection();
 }
 
 Widget buildFormFieldSelector({String label, String hint, List<String> data, String value, Function onChanged}) => Row(

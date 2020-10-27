@@ -105,3 +105,5 @@ unity/Eba3D/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
 # Temporary auto-generated Android Assets
 unity/Eba3D/[Aa]ssets/[Ss]treamingAssets/aa.meta
 unity/Eba3D/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+lib/database/credentials.dart
