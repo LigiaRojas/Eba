@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
 
 class VideosScreen extends StatelessWidget {
   @override
@@ -15,8 +16,8 @@ class VideosScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 35.0, bottom: 145.0, right: 100.0),
                 child: FlatButton(
                   onPressed: () {
+                    Logger().d('Going back from Video Screen - On screen back button');
                     Navigator.pop(context);
-                    print('Left.');
                   },
                   child: Image.asset('images/left-arrow.png'),
                 ),

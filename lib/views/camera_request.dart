@@ -1,3 +1,4 @@
+import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
 
 class CameraRequest extends StatelessWidget {
@@ -110,7 +111,8 @@ class CameraRequest extends StatelessWidget {
                                 alignment: Alignment.bottomCenter,
                                 child: FlatButton(
                                   onPressed: () {
-                                    Navigator.pushNamed(context, '/unity-demo-screen');
+                                    Logger().d('Going to Unity Screen from Camera Request');
+                                    Navigator.pushNamed(context, '/unity-screen');
                                   },
                                   child: Column(
                                     children: <Widget>[

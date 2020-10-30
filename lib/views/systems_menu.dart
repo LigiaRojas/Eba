@@ -1,3 +1,4 @@
+import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
 
 class SystemsMenu extends StatelessWidget {
@@ -103,6 +104,7 @@ class SystemsMenu extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 12.0, bottom: 20.0, right: 20.0),
                             child: FlatButton(
                                 onPressed: () {
+                                  Logger().d('Going back from Systems Menu - On screen back button');
                                   Navigator.pop(context);
                                 },
                                 child: Image.asset('images/left-arrow.png'),
@@ -118,6 +120,7 @@ class SystemsMenu extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 12.0, bottom: 20.0, left: 20.0),
                             child: FlatButton(
                               onPressed: () {
+                                Logger().d('Going to Videos Screen from Systems Menu');
                                 Navigator.pushNamed(context, '/videos-screen');
                               },
                               child: Image.asset('images/right-arrow.png'),

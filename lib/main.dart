@@ -1,12 +1,11 @@
-import 'package:eba/views/unity_demo_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:eba/views/loading_screen.dart';
 import 'package:eba/views/login_form.dart';
-import 'package:eba/views/camera_request.dart';
+import 'package:eba/views/unity_screen.dart';
 import 'package:eba/views/systems_menu.dart';
 import 'package:eba/views/videos_screen.dart';
+import 'package:eba/views/loading_screen.dart';
+import 'package:eba/views/camera_request.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
     return new MaterialApp(
       initialRoute: '/loading-screen',
         routes: {
-          '/unity-demo-screen': (context) => UnityDemoScreen(),
+          '/unity-screen': (context) => UnityScreen(),
           '/loading-screen': (context) => LoadingScreen(),
           '/login-form': (context) => LoginForm(),
           '/camera-request': (context) => CameraRequest(),

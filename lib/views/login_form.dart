@@ -1,8 +1,9 @@
+import 'package:logger/logger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:flutter_session/flutter_session.dart';
 import 'package:eba/database/driver.dart';
+import 'package:eba/database/login.dart';
 
 class LoginForm extends StatefulWidget {
   @override
@@ -90,12 +91,7 @@ class LoginFormWidget extends StatefulWidget {
 class _LoginFormWidgetState extends State<LoginFormWidget> {
   final _formKey = GlobalKey<FormState>();
 
-  Map<String, dynamic> _values = {
-    'edad': 18,
-    'pais': 'Colombia',
-    'departamento': 'Bogotá D.C.',
-    'municipio': 'Bogotá D.C.',
-  };
+  Login _values = Login(age: 18, country: 'Colombia', department: 'Bogotá D.C.', city: 'Bogotá D.C.');
   List<String> _cities = [ 'Bogotá D.C.' ];
   bool _visible = true;
 
@@ -117,10 +113,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     label: '¿Cuál es tu edad?',
                     hint: 'Edad (en años)',
                     data: [ for (var i = 6; i < 100; i++) i.toString() ],
-                    value: _values['edad'].toString(),
+                    value: _values.age.toString(),
                     onChanged: (value) {
                       setState(() {
-                        _values['edad'] = int.parse(value);
+                        Logger().d('Set Age');
+                        _values.age = int.parse(value);
                       });
                     }
                   ),
@@ -135,11 +132,12 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     label: '¿En qué país resides?',
                     hint: 'País de residencia',
                     data: countries,
-                    value: _values['pais'],
+                    value: _values.country,
                     onChanged: (value) {
                       setState(() {
+                        Logger().d('Set Country');
                         _visible = value == 'Colombia';
-                        _values['pais'] = value;
+                        _values.country = value;
                       });
                     },
                   ),
@@ -156,13 +154,14 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                       label: '¿En qué departamento?',
                       hint: 'Departamento de residencia',
                       data: departments,
-                      value: _values['departamento'],
+                      value: _values.department,
                       onChanged: (value) {
                         setState(() {
-                          _values['departamento'] = value;
-                          _values['municipio'] = null;
+                          Logger().d('Set Department');
+                          _values.department = value;
+                          _values.city = null;
                           _cities = citiesMap[value];
-                          _values['municipio'] = _cities[0];
+                          _values.city = _cities[0];
                         });
                       },
                     ),
@@ -176,10 +175,11 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                       label: '¿Y en qué municipio?',
                       hint: 'Municipio de residencia',
                       data: _cities,
-                      value: _values['municipio'],
+                      value: _values.city,
                       onChanged: (value) {
                         setState(() {
-                          _values['municipio'] = value;
+                          Logger().d('Set City');
+                          _values.city = value;
                         });
                       },
                     ),
@@ -189,11 +189,9 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
                     flex: _visible ? 1 : 2,
                     child: buildSubmitFormButton(() {
                       if (_formKey.currentState.validate()) {
-                        if (_values['pais'] != 'Colombia') {
-                          _values.remove('departamento');
-                          _values.remove('municipio');
-                        }
-                        login(_values);
+                        Logger().d('Saving Login info in the database');
+                        Driver().login(_values);
+                        Logger().d('Going to Camera Request from Login Form');
                         Navigator.pushReplacementNamed(context, '/camera-request');
                       }
                     })
@@ -207,12 +205,6 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         )
     );
   }
-}
-
-void login(Map<String, dynamic> values) async {
-  String id = await Driver().login(values);
-  await FlutterSession().set('id', id);
-  await Driver().closeConnection();
 }
 
 Widget buildFormFieldSelector({String label, String hint, List<String> data, String value, Function onChanged}) => Row(

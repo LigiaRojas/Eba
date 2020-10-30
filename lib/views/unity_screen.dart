@@ -1,15 +1,16 @@
+import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 
-class UnityDemoScreen extends StatefulWidget {
+class UnityScreen extends StatefulWidget {
 
-  UnityDemoScreen({Key key}) : super(key: key);
+  UnityScreen({Key key}) : super(key: key);
 
   @override
-  _UnityDemoScreenState createState() => _UnityDemoScreenState();
+  _UnityScreenState createState() => _UnityScreenState();
 }
 
-class _UnityDemoScreenState extends State<UnityDemoScreen>{
+class _UnityScreenState extends State<UnityScreen>{
   static final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   UnityWidgetController _unityWidgetController;
 
@@ -21,9 +22,8 @@ class _UnityDemoScreenState extends State<UnityDemoScreen>{
             key: _scaffoldKey,
             body: WillPopScope(
               onWillPop: () {
+                Logger().d('Going back to Camera Request from Unity Screen - OS back action');
                 Navigator.pushNamed(context, '/camera-request');
-                // Pop the category page if Android back button is pressed.
-                // go back to camera request
               },
               child: Container(
                 color: Colors.yellowAccent,
@@ -52,6 +52,7 @@ class _UnityDemoScreenState extends State<UnityDemoScreen>{
                         alignment: Alignment.topLeft,
                         child: FlatButton(
                           onPressed: () {
+                            Logger().d('Going back to Camera Request from Unity Screen - On screen back button');
                             Navigator.pushNamed(context, '/camera-request');
                           },
                           child: Image.asset('images/left-arrow.png'),
@@ -64,8 +65,8 @@ class _UnityDemoScreenState extends State<UnityDemoScreen>{
                         alignment: Alignment.topRight,
                         child: FlatButton(
                           onPressed: () {
+                            Logger().d('Going to Information Menu from Unity Screen');
                             // TODO: Navigator.pushNamed(context, '/information-menu');
-                            print('Information button.');
                           },
                           child: Image.asset('images/information_button.png'),
                         ),
@@ -88,6 +89,7 @@ class _UnityDemoScreenState extends State<UnityDemoScreen>{
                         alignment: Alignment.topRight,
                         child: FlatButton(
                           onPressed: () {
+                            Logger().d('Going to Systems Menu from Unity Screen');
                             Navigator.pushNamed(context, '/systems-menu');
                           },
                           child: Image.asset('images/systems_button.png'),
