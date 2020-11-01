@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:eba/views/info/info_common.dart';
 
 class DigestiveScreen extends StatelessWidget {
   @override
@@ -9,88 +10,16 @@ class DigestiveScreen extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       body: Column(
         children: [
-          Expanded(
-            flex: 1,
-            child: Container(
-              alignment: Alignment.topLeft,
-              color: Color(0xff363839),
-              child: Column(
-                children: [
-                  Expanded(
-                    flex: 7,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(
-                            alignment: Alignment.bottomRight,
-                            child: FlatButton(
-                              onPressed: () {
-                                Logger().d('Going back from Digestive System Screen - On screen back button');
-                                Navigator.pop(context);
-                              },
-                              child: Image.asset('images/left-arrow.png'),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          flex: 3,
-                          child: Container(
-                            padding: const EdgeInsets.only(top: 55.0),
-                            alignment: Alignment.bottomLeft,
-                            child: Text(
-                              'Sistema',
-                              style: TextStyle(
-                                fontFamily: 'LeagueSpartan',
-                                color: Colors.white,
-                                fontSize: 75.0,
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Expanded(
-                    flex: 5,
-                    child: Row(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Container(),
-                        ),
-                        Expanded(
-                          flex: 5,
-                          child: Container(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              'digestivo',
-                              style: TextStyle(
-                                fontFamily: 'LeagueSpartan',
-                                color: Colors.white,
-                                fontSize: 75.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  )
-                ],
-              ),
-            ),
-          ),
-          Divider(
-            thickness: 6.0,
-            height: 0.0,
-            color: Color(0xffaad4aa),
-          ),
+          ...buildHeader('digestivo', 75.0, () {
+            Logger().d('Going back from Digestive System Screen - On screen back button');
+            Navigator.pop(context);
+          }),
           Expanded(
             flex: 3,
             child: ListView(
               padding: const EdgeInsets.all(14.0),
               children: [
-                ...buildStandardText('Los bovinos son rumiantes, animales que '
+                ...buildText('Los bovinos son rumiantes, animales que '
                     'digieren los alimentos en dos etapas: primero los consumen '
                     'y luego realizan la rumia, proceso que consiste en '
                     'regurgitar el material semidigerido y volverlo a masticar '
@@ -106,7 +35,7 @@ class DigestiveScreen extends StatelessWidget {
                     'recto.'),
                 Image.asset('images/digestive-system.gif'),
                 buildDivider(),
-                ...buildStandardText('Dedican cerca de ocho horas al día a la '
+                ...buildText('Dedican cerca de ocho horas al día a la '
                     'ingestión de su alimentación. Aprisionan el alimento con '
                     'su lengua ágil y áspera, y sus incisivos inferiores les '
                     'permiten cortar la hierba contra su almohadilla dental; un '
@@ -118,7 +47,7 @@ class DigestiveScreen extends StatelessWidget {
                     'día (10000 durante la toma de alimento y 30000 durante la '
                     'rumia).'
                 ),
-                ...buildStandardText('Una característica distintiva de los '
+                ...buildText('Una característica distintiva de los '
                     'rumiantes es su aparato digestivo poligástrico compuesto '
                     'por cuatro divisiones: tres preestómagos (el rumen o panza, '
                     'el retículo o redecilla y el omaso o libro) y por el '
@@ -129,7 +58,7 @@ class DigestiveScreen extends StatelessWidget {
                     'hemicelulosa y pectina).',
                   dividerColor: Color(0xffaad4aa),
                 ),
-                ...buildStandardText('El primer compartimiento por el que pasan '
+                ...buildText('El primer compartimiento por el que pasan '
                     'los alimentos es el rumen; a su entrada se encuentra un '
                     'repliegue de piel, el canal esofágico, que permite a la '
                     'leche en los jóvenes y al agua en los adultos pasar '
@@ -138,7 +67,7 @@ class DigestiveScreen extends StatelessWidget {
                     'total del estómago.',
                   dividerColor: Color(0xffaad4aa),
                 ),
-                ...buildStandardText('El retículo tiene como función la retención '
+                ...buildText('El retículo tiene como función la retención '
                     'de las partículas alimentarias y movilizar el alimento '
                     'digerido hacia el omaso o hacia el rumen en la regurgitación '
                     'del alimento después de la rumia. Las partículas más gruesas '
@@ -147,7 +76,7 @@ class DigestiveScreen extends StatelessWidget {
                     'hacia el omaso.',
                   dividerColor: Color(0xffaad4aa),
                 ),
-                ...buildStandardText('El omaso está formado por finas láminas '
+                ...buildText('El omaso está formado por finas láminas '
                     'parecidas en cierta forma a las hojas de un libro, de ahí '
                     'que también reciba el nombre de libro o librillo. Este '
                     'constituye una antecámara desde la cual pasa el bolo '
@@ -155,14 +84,14 @@ class DigestiveScreen extends StatelessWidget {
                     'del exceso de agua contenida en los alimentos.',
                   dividerColor: Color(0xffaad4aa),
                 ),
-                ...buildStandardText('En el abomaso se segregan los jugos '
+                ...buildText('En el abomaso se segregan los jugos '
                     'gástricos que someten al alimento a la digestión '
                     'enzimática de las partículas alimentarias y de las '
                     'bacterias provenientes del rumen. El abomaso está conectado'
                     ' con el principio del intestino.',
                   dividerColor: Color(0xffaad4aa),
                 ),
-                ...buildStandardText('El intestino delgado se encarga de la '
+                ...buildText('El intestino delgado se encarga de la '
                     'digestión y absorción de nutrientes, y ya en el intestino '
                     'grueso, el ciego se encarga de la fermentación de los '
                     'productos de digestión no absorbidos, el colon de la '
@@ -178,57 +107,14 @@ class DigestiveScreen extends StatelessWidget {
                     'disfuncional, haciendo que las vacas tiendan a tropezar, '
                     'perder el apetito y se vuelven débiles.',
                   fontFamily: 'Canda Tawa Regular',
-                  fontSize: 25.0,
-                  height: 1.2
+                  fontSize: 28.0,
+                  height: 1.2,
                 ),
               ],
-            )
-          )
+            ),
+          ),
         ],
       ),
     );
   }
 }
-
-List<Widget> buildStandardText(String text, {Color dividerColor: Colors.white}) {
-  return [
-    Text(
-      text,
-      textAlign: TextAlign.justify,
-      style: TextStyle(
-          fontFamily: 'LeagueSpartan',
-          color: Colors.black,
-          fontSize: 18.0,
-          height: 1.4
-      ),
-    ),
-    buildDivider(color: dividerColor)
-  ];
-}
-
-List<Widget> buildBoxedText(String text, { String fontFamily: 'LeagueSpartan', fontSize: 18.0, height: 1.4, Color dividerColor: Colors.white }) {
-  return [
-    Container(
-      color: Color(0xffaad4aa),
-      alignment: Alignment.center,
-      padding: const EdgeInsets.all(8.0),
-      child: Text(
-        text,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-            fontFamily: fontFamily,
-            color: Colors.black,
-            fontSize: fontSize,
-            height: height
-        ),
-      ),
-    ),
-    buildDivider(color: dividerColor)
-  ];
-}
-
-Divider buildDivider({ Color color: Colors.white }) => Divider(
-  thickness: color == Colors.white ? 0.0 : 5.0,
-  height: 20.0,
-  color: color,
-);
