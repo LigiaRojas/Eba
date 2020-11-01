@@ -10,7 +10,7 @@ class ReproductiveScreen extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       body: Column(
         children: [
-          ...buildHeader('reproductor', 60.0, () {
+          ...buildHeader('reproductor', 55.0, () {
             Logger().d('Going back from Reproductive System Screen - On screen back button');
             Navigator.pop(context);
           }),
@@ -22,6 +22,7 @@ class ReproductiveScreen extends StatelessWidget {
                   ...buildText('Además de brindarnos leche, una vaca cumple con '
                       'albergar a la cría que extenderá su linaje, y con ello '
                       'garantizar el futuro de la especie.',
+                    textAlign: TextAlign.center,
                     fontFamily: 'Canda Tawa Regular',
                     fontSize: 28.0,
                     height: 1.2,
@@ -29,13 +30,13 @@ class ReproductiveScreen extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        flex: 4,
+                        flex: 1,
                         child: Image.asset('images/reproductive-system.png'),
                       ),
                       Expanded(
-                        flex: 3,
+                        flex: 1,
                         child: buildText('El sistema está constituido por los '
-                            'órganos internos y externos. Los primeros incluyen '
+                            'órganos internos y externos.\nLos primeros incluyen '
                             '2 ovarios, 2 oviductos, 2 cuernos uterinos, un '
                             'útero, el cérvix y la vagina, mientras que los '
                             'segundos son el vestíbulo vaginal y la vulva.',

@@ -10,7 +10,7 @@ class SkeletalScreen extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       body: Column(
         children: [
-          ...buildHeader('óseo', 75.0, () {
+          ...buildHeader('óseo', 65.0, () {
             Logger().d('Going back from Skeletal System Screen - On screen back button');
             Navigator.pop(context);
           }),
@@ -25,26 +25,34 @@ class SkeletalScreen extends StatelessWidget {
                       'forman el sostén del organismo, las funciones básicas '
                       'del sistema óseo son:'),
                   ...buildText('•Soporte: los huesos proveen un cuadro '
-                      'rígido de soporte para los músculos y tejidos blandos.\n'
-                      '•Protección: los huesos forman varias cavidades que '
+                      'rígido de soporte para los músculos y tejidos blandos.',
+                    textAlign: TextAlign.left,
+                  ),
+                  ...buildText('•Protección: los huesos forman varias cavidades que '
                       'protegen los órganos internos de posibles traumatismos. '
                       'Por ejemplo, el cráneo protege el cerebro frente a los '
                       'golpes, y la caja torácica, formada por costillas y '
-                      'esternón protege los pulmones y el corazón.\n'
-                      '•Movimiento: gracias a los músculos que se insertan en '
+                      'esternón protege los pulmones y el corazón.',
+                    textAlign: TextAlign.left,
+                  ),
+                  ...buildText('•Movimiento: gracias a los músculos que se insertan en '
                       'los huesos a través de los tendones y su contracción '
-                      'sincronizada, se produce el movimiento.\n'
-                      '•Homeostasis mineral: el tejido óseo almacena una serie '
+                      'sincronizada, se produce el movimiento.',
+                    textAlign: TextAlign.left,
+                  ),
+                  ...buildText('•Homeostasis mineral: el tejido óseo almacena una serie '
                       'de minerales, especialmente calcio y fósforo, necesarios '
                       'para la contracción muscular y otras muchas funciones. '
                       'Cuando son necesarios, el hueso libera dichos minerales '
                       'en la sangre que los distribuye a otras partes del '
-                      'organismo.\n'
-                      '•Producción de células sanguíneas: dentro de cavidades '
+                      'organismo.',
+                    textAlign: TextAlign.left,
+                  ),
+                  ...buildText('•Producción de células sanguíneas: dentro de cavidades '
                       'situadas en ciertos huesos, un tejido conectivo '
                       'denominado médula ósea roja produce las células '
                       'sanguíneas rojas o hematíes mediante el proceso '
-                      'denominado hematopoyesis.\n',
+                      'denominado hematopoyesis.',
                     textAlign: TextAlign.left,
                     dividerColor: Color(0xffaad4aa),
                   ),

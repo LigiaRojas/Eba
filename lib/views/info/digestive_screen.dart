@@ -10,7 +10,7 @@ class DigestiveScreen extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       body: Column(
         children: [
-          ...buildHeader('digestivo', 75.0, () {
+          ...buildHeader('digestivo', 65.0, () {
             Logger().d('Going back from Digestive System Screen - On screen back button');
             Navigator.pop(context);
           }),
