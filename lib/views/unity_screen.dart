@@ -68,7 +68,7 @@ class _UnityScreenState extends State<UnityScreen>{
                             Logger().d('Going to Information Menu from Unity Screen');
                             // TODO: Navigator.pushNamed(context, '/information-menu');
                           },
-                          child: Image.asset('images/information_button.png'),
+                          child: Image.asset('images/information-button.png'),
                         ),
                       ),
                     ),
@@ -92,7 +92,7 @@ class _UnityScreenState extends State<UnityScreen>{
                             Logger().d('Going to Systems Menu from Unity Screen');
                             Navigator.pushNamed(context, '/systems-menu');
                           },
-                          child: Image.asset('images/systems_button.png'),
+                          child: Image.asset('images/systems-button.png'),
                         ),
                       ),
                     ),
