@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
+import 'package:eba/views/Unity/unity_arguments.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 
 class UnityScreen extends StatefulWidget {
@@ -15,6 +16,7 @@ class _UnityScreenState extends State<UnityScreen>{
   UnityWidgetController _unityWidgetController;
 
   Widget build(BuildContext context) {
+    final UnityArguments arguments = ModalRoute.of(context).settings.arguments;
     return Stack(
         children: <Widget>[
           Scaffold(
@@ -65,8 +67,24 @@ class _UnityScreenState extends State<UnityScreen>{
                         alignment: Alignment.topRight,
                         child: FlatButton(
                           onPressed: () {
-                            Logger().d('Going to Information Menu from Unity Screen');
-                            // TODO: Navigator.pushNamed(context, '/information-menu');
+                            switch(arguments.model) {
+                              case UnityModel.GENERAL:
+                                Logger().d('Going to General Information Menu from Unity Screen');
+                                Navigator.pushNamed(context, '/general-screen');
+                                break;
+                              case UnityModel.DIGESTIVE:
+                                Logger().d('Going to Digestive Information Menu from Unity Screen');
+                                Navigator.pushNamed(context, '/digestive-screen');
+                                break;
+                              case UnityModel.REPRODUCTIVE:
+                                Logger().d('Going to Reproductive Information Menu from Unity Screen');
+                                Navigator.pushNamed(context, '/reproductive-screen');
+                                break;
+                              case UnityModel.SKELETAL:
+                                Logger().d('Going to Skeletal Information Menu from Unity Screen');
+                                Navigator.pushNamed(context, '/skeletal-screen');
+                                break;
+                            }
                           },
                           child: Image.asset('images/information-button.png'),
                         ),

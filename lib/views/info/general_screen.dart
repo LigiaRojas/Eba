@@ -1,6 +1,5 @@
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:eba/views/info/info_common.dart';
 
 class GeneralScreen extends StatelessWidget {

@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
+import 'package:eba/views/unity/unity_arguments.dart';
 
 class SystemsMenu extends StatelessWidget {
   @override
@@ -57,7 +58,14 @@ class SystemsMenu extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: buildButton(
-                    action: () => print('Óseo'),
+                    action: () {
+                      Logger().d('Going to Unity Screen with Skeletal System context from Systems Menu');
+                      Navigator.pushNamed(
+                        context,
+                        '/unity-screen',
+                        arguments: UnityArguments(UnityModel.SKELETAL),
+                      );
+                    },
                     left: Image.asset('images/bone.png'),
                     right: Row(
                       children: <Widget>[
@@ -79,7 +87,14 @@ class SystemsMenu extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: buildButton(
-                    action: () => print('Reproductivo'),
+                    action: () {
+                      Logger().d('Going to Unity Screen with Reproductive System context from Systems Menu');
+                      Navigator.pushNamed(
+                        context,
+                        '/unity-screen',
+                        arguments: UnityArguments(UnityModel.REPRODUCTIVE),
+                      );
+                    },
                     left: Image.asset('images/reproductive.png'),
                     right: buildButtonText('Sistema\nreproductor.'),
                   ),
@@ -87,7 +102,14 @@ class SystemsMenu extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: buildButton(
-                    action: () => print('Digestivo'),
+                    action: () {
+                      Logger().d('Going to Unity Screen with Digestive System context from Systems Menu');
+                      Navigator.pushNamed(
+                        context,
+                        '/unity-screen',
+                        arguments: UnityArguments(UnityModel.DIGESTIVE),
+                      );
+                    },
                     left: Image.asset('images/digestive.png'),
                     right: buildButtonText('Sistema\ndigestivo.'),
                   ),

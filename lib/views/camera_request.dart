@@ -1,5 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
+import 'package:eba/views/Unity/unity_arguments.dart';
 
 class CameraRequest extends StatelessWidget {
   @override
@@ -112,7 +113,11 @@ class CameraRequest extends StatelessWidget {
                                 child: FlatButton(
                                   onPressed: () {
                                     Logger().d('Going to Unity Screen from Camera Request');
-                                    Navigator.pushNamed(context, '/unity-screen');
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/unity-screen',
+                                      arguments: UnityArguments(UnityModel.GENERAL),
+                                    );
                                   },
                                   child: Column(
                                     children: <Widget>[

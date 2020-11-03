@@ -2,8 +2,8 @@ import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:eba/database/login.dart';
-import 'package:flutter_session/flutter_session.dart';
 import 'package:eba/database/driver.dart';
+import 'package:flutter_session/flutter_session.dart';
 
 class LoadingScreen extends StatefulWidget {
 
