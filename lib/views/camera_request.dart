@@ -1,6 +1,6 @@
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
-import 'package:eba/views/Unity/unity_arguments.dart';
+import 'package:eba/views/unity_screen.dart';
 
 class CameraRequest extends StatelessWidget {
   @override

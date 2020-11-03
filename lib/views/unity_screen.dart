@@ -1,6 +1,5 @@
 import 'package:logger/logger.dart';
 import 'package:flutter/material.dart';
-import 'package:eba/views/Unity/unity_arguments.dart';
 import 'package:flutter_unity_widget/flutter_unity_widget.dart';
 
 class UnityScreen extends StatefulWidget {
@@ -133,4 +132,14 @@ class _UnityScreenState extends State<UnityScreen>{
   void onUnityCreated(controller) {
     this._unityWidgetController = controller;
   }
+}
+
+class UnityArguments {
+  final UnityModel model;
+
+  UnityArguments(this.model);
+}
+
+enum UnityModel {
+  GENERAL, DIGESTIVE, REPRODUCTIVE, SKELETAL
 }
