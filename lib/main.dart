@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      initialRoute: '/digestive-screen',
+      initialRoute: '/general-screen',
         routes: {
           '/unity-screen': (context) => UnityScreen(),
           '/loading-screen': (context) => LoadingScreen(),

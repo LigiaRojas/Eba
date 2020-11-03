@@ -48,12 +48,12 @@ class GeneralScreen extends StatelessWidget {
                     Stack(
                       alignment: Alignment.bottomCenter,
                       children: [
-                        buildBoxedText('Seguro has preparado un\n'
-                            'delicioso café o chocolate en\n'
-                            'casa para degustar en el día o\n'
-                            'has consumido algún producto\n'
-                            'derivado de nuestra leche, a\n'
-                            'estos se les denomina\n'
+                        buildBoxedText('Seguro has preparado un delicioso\n'
+                            'café o chocolate en casa para\n'
+                            'degustar en el día o has\n'
+                            'consumido algún producto\n'
+                            'derivado de nuestra leche,\n'
+                            'a estos se les denomina\n'
                             'productos lácteos. ',
                           textAlign: TextAlign.right,
                           alignment: Alignment.centerRight,
@@ -63,7 +63,7 @@ class GeneralScreen extends StatelessWidget {
                             Expanded(
                               flex: 1,
                               child: Container(
-                                padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                                padding: const EdgeInsets.only(left: 15.0, right: 20.0),
                                 child: Image.asset('images/diary-products.png'),
                               ),
                             ),
@@ -98,29 +98,38 @@ class GeneralScreen extends StatelessWidget {
                     ),
                     ...buildText('Aquí te enumero unos cuantos productos '
                         'lácteos deliciosos e insignias en la región:'),
-                    Row(
+                    Stack(
+                      alignment: Alignment.bottomCenter,
                       children: [
-                        Expanded(
-                          flex: 4,
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: buildText('•Radio\n'
-                                '•Queso en todos sus tipos\n'
-                                '•Yogurt de muchos sabores\n'
-                                '•Kumis\n'
-                                '•Cuajada\n'
-                                '•Nata o crema de leche\n'
-                                '•Arequipe\n'
-                                '•Mantequilla\n',
-                              fontFamily: 'Canda Tawa Regular',
-                              fontSize: 25.0,
-                              height: 1.2,
-                            )[0],
-                          ),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 1,
+                              child: buildText('•Queso en todos sus tipos.\n'
+                                  '•Yogurt de muchos sabores.\n'
+                                  '•Kumis.\n'
+                                  '•Cuajada.\n'
+                                  '•Nata o crema de leche.\n'
+                                  '•Arequipe.\n'
+                                  '•Mantequilla.\n',
+                                fontFamily: 'Canda Tawa Regular',
+                                fontSize: 25.0,
+                                height: 1.2,
+                              )[0],
+                            ),
+                          ],
                         ),
-                        Expanded(
-                          flex: 3,
-                          child: Image.asset('images/diary-fridge.png'),
+                        Row(
+                          children: [
+                            Expanded(
+                              flex: 8,
+                              child: Container(),
+                            ),
+                            Expanded(
+                              flex: 7,
+                              child: Image.asset('images/diary-fridge.png'),
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -163,7 +172,7 @@ Widget buildTitle() => Row(
       child: Container(
         alignment: Alignment.center,
         child: buildText('¿Ves mis manchas\nblancas y negras?',
-          fontSize: 30.0,
+          fontSize: 25.0,
         )[0],
       ),
     ),
