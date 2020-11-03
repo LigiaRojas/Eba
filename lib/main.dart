@@ -9,6 +9,7 @@ import 'package:eba/views/camera_request.dart';
 import 'package:eba/views/info/digestive_screen.dart';
 import 'package:eba/views/info/skeletal_screen.dart';
 import 'package:eba/views/info/reproductive_screen.dart';
+import 'package:eba/views/info/general_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
           '/digestive-screen': (context) => DigestiveScreen(),
           '/skeletal-screen': (context) => SkeletalScreen(),
           '/reproductive-screen': (context) => ReproductiveScreen(),
+          '/general-screen': (context) => GeneralScreen(),
         }
     );
   }

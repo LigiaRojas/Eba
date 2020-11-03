@@ -24,6 +24,8 @@ List<Widget> buildText(String text, {
 }
 
 List<Widget> buildBoxedText(String text, {
+  TextAlign textAlign: TextAlign.center,
+  alignment: Alignment.center,
   String fontFamily: 'LeagueSpartan',
   fontSize: 18.0,
   height: 1.4,
@@ -32,11 +34,11 @@ List<Widget> buildBoxedText(String text, {
   return [
     Container(
       color: Color(0xffaad4aa),
-      alignment: Alignment.center,
+      alignment: alignment,
       padding: const EdgeInsets.all(8.0),
       child: Text(
         text,
-        textAlign: TextAlign.center,
+        textAlign: textAlign,
         style: TextStyle(
             fontFamily: fontFamily,
             color: Colors.black,
@@ -55,75 +57,71 @@ Divider buildDivider({ Color color: Colors.white }) => Divider(
   color: color,
 );
 
-List<Widget> buildHeader(String bottomText, double fontSize, Function backButtonAction) {
-  return [
-    Expanded(
-      flex: 1,
-      child: Container(
-        alignment: Alignment.topLeft,
-        color: Color(0xff363839),
-        child: Column(
-          children: [
-            Expanded(
-              flex: 7,
-              child: Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      alignment: Alignment.bottomRight,
-                      child: FlatButton(
-                        onPressed: backButtonAction,
-                        child: Image.asset('images/left-arrow.png'),
-                      ),
-                    ),
+Widget buildHeaderDivider() => Divider(
+  thickness: 6.0,
+  height: 0.0,
+  color: Color(0xffaad4aa),
+);
+
+Widget buildHeader(String bottomText, double fontSize, Function backButtonAction, { String topText: 'Sistema' }) {
+  return Container(
+    alignment: Alignment.topLeft,
+    child: Column(
+      children: [
+        Expanded(
+          flex: 4,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Container(
+                  padding: const EdgeInsets.only(bottom: 10.0),
+                  alignment: Alignment.bottomRight,
+                  child: FlatButton(
+                    onPressed: backButtonAction,
+                    child: Image.asset('images/left-arrow.png'),
                   ),
-                  Expanded(
-                    flex: 3,
-                    child: Container(
-                      alignment: Alignment.bottomRight,
-                      padding: const EdgeInsets.only(top: 55.0, right: 25.0),
-                      child: Text(
-                        'Sistema',
-                        style: TextStyle(
-                          fontFamily: 'LeagueSpartan',
-                          color: Colors.white,
-                          fontSize: fontSize,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-                flex: 5,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      alignment: Alignment.topRight,
-                      padding: const EdgeInsets.only(right: 25.0),
-                      child: Text(
-                        bottomText,
-                        style: TextStyle(
-                          fontFamily: 'LeagueSpartan',
-                          color: Colors.white,
-                          fontSize: fontSize,
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
-            ),
-          ],
+              ),
+              Expanded(
+                flex: 3,
+                child: Container(
+                  alignment: Alignment.bottomRight,
+                  padding: const EdgeInsets.only(right: 25.0),
+                  child: Text(
+                    topText,
+                    style: TextStyle(
+                      fontFamily: 'LeagueSpartan',
+                      color: Colors.white,
+                      fontSize: fontSize,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
+        Expanded(
+          flex: 3,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Container(
+                alignment: Alignment.topRight,
+                padding: const EdgeInsets.only(right: 25.0),
+                child: Text(
+                  bottomText,
+                  style: TextStyle(
+                    fontFamily: 'LeagueSpartan',
+                    color: Colors.white,
+                    fontSize: fontSize,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
     ),
-    Divider(
-      thickness: 6.0,
-      height: 0.0,
-      color: Color(0xffaad4aa),
-    ),
-  ];
+  );
 }
