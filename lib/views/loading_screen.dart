@@ -36,7 +36,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         Logger().d('Session ID is corrupted. Closing application');
         SystemNavigator.pop();
       }
-      Future.delayed(Duration(milliseconds: 2500), () {
+      Future.delayed(Duration(milliseconds: 2000), () {
         Logger().d('Going to Camera Request from Loading Screen');
         Navigator.pushReplacementNamed(context, '/camera-request');
       });
