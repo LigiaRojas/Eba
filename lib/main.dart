@@ -37,6 +37,7 @@ class MyApp extends StatelessWidget {
           '/skeletal-screen': (context) => SkeletalScreen(),
           '/reproductive-screen': (context) => ReproductiveScreen(),
           '/general-screen': (context) => GeneralScreen(),
+          '/youtube-screen': (context) => YoutubeScreen(),
         }
     );
   }

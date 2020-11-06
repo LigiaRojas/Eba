@@ -32,6 +32,7 @@ dependencies:
   flutter_session: ^0.1.1
   mongo_dart: ^0.4.3
   logger: ^0.9.4
+  youtube_player_flutter: ^7.0.0+7
 
 dev_dependencies:
   flutter_test:
