@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class TargetTracking : MonoBehaviour
@@ -21,7 +22,7 @@ public class TargetTracking : MonoBehaviour
 
         foreach (GameObject prefab in prefabs)
         {
-            GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.Euler(-90, 0, 0));
+            GameObject newPrefab = Instantiate(prefab, Vector3.zero, Quaternion.identity);
             newPrefab.name = prefab.name;
             newPrefab.SetActive(false);
             prefabsMap.Add(prefab.name, newPrefab);
@@ -56,17 +57,23 @@ public class TargetTracking : MonoBehaviour
 
     private void UpdateScene(ARTrackedImage trackedImage)
     {
-        Vector3 position = trackedImage.transform.position;
         GameObject prefab = prefabsMap[prefabName];
-        prefab.transform.position = position;
-        prefab.SetActive(true);
-
-        foreach (GameObject gameObject in prefabsMap.Values)
+        if (trackedImage.trackingState != TrackingState.None)
         {
-            if (gameObject.name != prefabName)
+            prefab.transform.position = trackedImage.transform.position;
+            prefab.SetActive(true);
+
+            foreach (GameObject gameObject in prefabsMap.Values)
             {
-                gameObject.SetActive(false);
+                if (gameObject.name != prefabName)
+                {
+                    gameObject.SetActive(false);
+                }
             }
+        }
+        else
+        {
+            prefab.SetActive(false);
         }
     }
 
