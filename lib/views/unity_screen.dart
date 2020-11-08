@@ -24,7 +24,8 @@ class _UnityScreenState extends State<UnityScreen>{
             body: WillPopScope(
               onWillPop: () {
                 Logger().d('Going back to Camera Request from Unity Screen - OS back action');
-                Navigator.pushNamed(context, '/camera-request');
+                Navigator.pushNamed(context, arguments.model == UnityModel.GENERAL ? '/camera-request' : '/systems-menu');
+                return Future.value(true);
               },
               child: Container(
                 color: Colors.yellowAccent,
@@ -54,7 +55,7 @@ class _UnityScreenState extends State<UnityScreen>{
                         child: FlatButton(
                           onPressed: () {
                             Logger().d('Going back to Camera Request from Unity Screen - On screen back button');
-                            Navigator.pushNamed(context, '/camera-request');
+                            Navigator.pushNamed(context, arguments.model == UnityModel.GENERAL ? '/camera-request' : '/systems-menu');
                           },
                           child: Image.asset('images/left-arrow.png'),
                         ),
