@@ -147,7 +147,33 @@ class CameraRequest extends StatelessWidget {
                             ),
                             Expanded(
                               flex: 3,
-                              child: Container(),
+                              child: Container(
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(),
+                                    ),
+                                    Expanded(
+                                      flex: 2,
+                                      child: Container(
+                                        alignment: Alignment.topCenter,
+                                        child: FlatButton(
+                                          child: Image.asset('images/about-button.png'),
+                                          onPressed: () {
+                                            Logger().d('Going to About Screen from Camera Request');
+                                            Navigator.pushNamed(context, '/about-screen');
+                                          },
+                                        ),
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ),

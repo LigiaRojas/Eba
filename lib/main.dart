@@ -10,6 +10,7 @@ import 'package:eba/views/info/general_screen.dart';
 import 'package:eba/views/info/digestive_screen.dart';
 import 'package:eba/views/info/skeletal_screen.dart';
 import 'package:eba/views/info/reproductive_screen.dart';
+import 'package:eba/views/about_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,6 +39,7 @@ class MyApp extends StatelessWidget {
           '/reproductive-screen': (context) => ReproductiveScreen(),
           '/general-screen': (context) => GeneralScreen(),
           '/youtube-screen': (context) => YoutubeScreen(),
+          '/about-screen': (context) => AboutScreen(),
         }
     );
   }
