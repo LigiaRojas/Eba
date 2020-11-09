@@ -27,7 +27,7 @@ class GeneralScreen extends StatelessWidget {
                 child: Container(),
               ),
               Expanded(
-                flex: 7,
+                flex: 9,
                 child: buildExtendedHeader(() {
                   Logger().d('Going back from General Info Screen - On screen back button');
                   Navigator.pushNamed(
@@ -203,7 +203,7 @@ Widget buildTitle() => Row(
 );
 
 Widget buildExtendedHeader(Function backButtonAction) {
-  Widget baseHeader = buildHeader('soy Eba.', 75.0, backButtonAction, topText: 'Hola,');
+  Widget baseHeader = buildHeader('soy Eba.', 72.0, backButtonAction, topText: 'Hola,');
   Widget extendedBackground = Row(
     children: [
       Expanded(

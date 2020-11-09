@@ -12,7 +12,7 @@ class AboutScreen extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Expanded(
                     flex: 4,
@@ -21,6 +21,7 @@ class AboutScreen extends StatelessWidget {
                   Expanded(
                     flex: 1,
                     child: Container(
+                      padding: const EdgeInsets.only(bottom: 10.0),
                       child: FlatButton(
                         child: Image.asset('images/close-button.png'),
                         onPressed: () {
