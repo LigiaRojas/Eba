@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -219,11 +219,11 @@ Light:
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 1
+  m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
-  m_Range: 10
+  m_Range: 0
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -259,15 +259,15 @@ Light:
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_RenderingLayerMask: 1
-  m_Lightmapping: 1
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: NaN, y: 8.3e-44, z: 2.1165e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -362,8 +362,8 @@ MonoBehaviour:
   prefabs:
   - {fileID: 1328256535326683220, guid: 40af7752c56f4af419e23df369aaa264, type: 3}
   - {fileID: 7458309357789949911, guid: c63e89f2727a5ab46aa23c4379315b3f, type: 3}
-  - {fileID: 482647940091712537, guid: 25c8a11cde5646c4f8c08a37d32c45ba, type: 3}
-  - {fileID: 3016466595981187313, guid: ca201a2ef4604b24eb0a03f88265185b, type: 3}
+  - {fileID: 2036617551953909555, guid: d97b7c29db6a76747b1b2eadb13c9e2f, type: 3}
+  - {fileID: 7980547902466698239, guid: ca201a2ef4604b24eb0a03f88265185b, type: 3}
 --- !u!1 &1577749883
 GameObject:
   m_ObjectHideFlags: 0
