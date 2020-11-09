@@ -134,7 +134,7 @@ class VideosScreen extends StatelessWidget {
                           Navigator.pushNamed(
                             context,
                             '/youtube-screen',
-                            arguments: YoutubeArguments(''),
+                            arguments: YoutubeArguments('2xE5YNZ6bpU'),
                           );
                         },
                     ),
