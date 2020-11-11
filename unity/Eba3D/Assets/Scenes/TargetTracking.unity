@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 2.7
+  m_AmbientIntensity: 1.42
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 49a8f3a29da8ebf438e94004bd90a55c,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -194,75 +194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 0}
---- !u!1001 &68904649
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.0019378178
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.0142
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.1628
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4702481338909127875, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7364718809574670822, guid: 016d0cbe959446548b0064894e7ba546,
-        type: 3}
-      propertyPath: m_Name
-      value: General
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 016d0cbe959446548b0064894e7ba546, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,7 +220,7 @@ Light:
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
   serializedVersion: 10
-  m_Type: 0
+  m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
@@ -331,7 +262,7 @@ Light:
     serializedVersion: 2
     m_Bits: 0
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -433,7 +364,7 @@ MonoBehaviour:
   - {fileID: 1328256535326683220, guid: 40af7752c56f4af419e23df369aaa264, type: 3}
   - {fileID: 7458309357789949911, guid: c63e89f2727a5ab46aa23c4379315b3f, type: 3}
   - {fileID: 7364718809574670822, guid: 016d0cbe959446548b0064894e7ba546, type: 3}
-  - {fileID: 7980547902466698239, guid: ca201a2ef4604b24eb0a03f88265185b, type: 3}
+  - {fileID: 4771813814301340599, guid: 667fc60f03bb52e459c08a9686108a24, type: 3}
 --- !u!1 &1577749883
 GameObject:
   m_ObjectHideFlags: 0
