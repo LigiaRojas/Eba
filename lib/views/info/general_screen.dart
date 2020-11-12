@@ -27,7 +27,7 @@ class GeneralScreen extends StatelessWidget {
                 child: Container(),
               ),*/
               Expanded(
-                flex: 9,
+                flex: 10,
                 child: buildExtendedHeader(() {
                   Logger().d('Going back from General Info Screen - On screen back button');
                   Navigator.pushNamed(
@@ -191,7 +191,8 @@ Widget buildTitle() => Row(
       child: Container(
         alignment: Alignment.center,
         child: buildText('¿Ves mis manchas\nblancas y negras?',
-          fontSize: 25.0,
+          textAlign: TextAlign.center,
+          fontSize: 23.0,
         )[0],
       ),
     ),
