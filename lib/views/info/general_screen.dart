@@ -22,10 +22,10 @@ class GeneralScreen extends StatelessWidget {
           },
           child: Column(
             children: [
-              Expanded(
+              /*Expanded(
                 flex: 1,
                 child: Container(),
-              ),
+              ),*/
               Expanded(
                 flex: 9,
                 child: buildExtendedHeader(() {
@@ -47,7 +47,7 @@ class GeneralScreen extends StatelessWidget {
                     children: [
                       buildTitle(),
                       ...buildText('Estos colores son característicos para que me '
-                          'reconozcas, algunas veces también puede ser rojizo con '
+                          'reconozcas, algunas veces también pueden ser rojizo con '
                           'blanco.',
                         fontFamily: 'Canda Tawa Regular',
                         textAlign: TextAlign.center,
@@ -60,8 +60,8 @@ class GeneralScreen extends StatelessWidget {
                           'proceso de cruzamientos, del cual resultaron nuestras '
                           'características únicas de color, fortaleza y producción, '
                           'que comenzaron a diferenciarnos de las demás razas. Por '
-                          'ejemplo, la producción promedio de una vaca Holstein '
-                          'en la región, es de más de 100.000 litros diarios y '
+                          'ejemplo, la producción promedio de las vacas Holstein '
+                          'en la región supera los 100.000 litros diarios y '
                           'cada año aumenta un poco más.'),
                       Stack(
                         alignment: Alignment.bottomCenter,

@@ -118,10 +118,10 @@ class SkeletalScreen extends StatelessWidget {
                         ),
                         buildDivider(color: Color(0xffaad4aa)),
                         ...buildText('Muchas enfermedades y condiciones pueden ocurrir '
-                            'dentro del esqueleto de una vaca si el sistema inmune de '
-                            'la vaca es débil o si está desnutrida. Por ejemplo, la '
-                            'fiebre de leche o hipocalcemia es una condición que '
-                            'afecta a las vacas cuando el calcio sale del torrente '
+                            'dentro del esqueleto de una vaca si el sistema inmune '
+                            'es débil o si está desnutrida. Por ejemplo, la fiebre '
+                            'de leche o hipocalcemia es una condición que afecta '
+                            'a las vacas cuando el calcio sale del torrente '
                             'sanguíneo para apoyar la producción de leche. El '
                             'resultado es una ruptura muscular y esquelética, que '
                             'debilita e incapacita al animal para ponerse de pie. Por '

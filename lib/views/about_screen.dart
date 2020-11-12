@@ -59,7 +59,7 @@ class AboutScreen extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       child: Text(
-                        'Versión 0.1.0',
+                        'Versión 1.0.0',
                         style: TextStyle(
                           fontFamily: 'Canda Tawa Regular',
                           color: Color(0xff363839),
