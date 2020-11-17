@@ -91,7 +91,7 @@ class AboutScreen extends StatelessWidget {
                         style: TextStyle(
                           fontFamily: 'Canda Tawa Regular',
                           color: Color(0xff363839),
-                          fontSize: 34.0,
+                          fontSize: 33.0,
                         ),
                         textAlign: TextAlign.center,
                       ),

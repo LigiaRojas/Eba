@@ -35,7 +35,7 @@ class _LoginFormState extends State<LoginForm> {
                     color: Color(0xffaad4aa),
                   ),
                   Expanded(
-                    flex: 4,
+                    flex: 5,
                     child: Container(
                       color: Colors.white,
                       padding: const EdgeInsets.only(left: 30.0, top: 8.0, right: 30.0, bottom: 0.0),
@@ -44,7 +44,7 @@ class _LoginFormState extends State<LoginForm> {
                         'QUEREMOS\nSABER\nMÁS\nSOBRE\nTI',
                         style: TextStyle(
                           fontFamily: 'LeagueSpartan',
-                          fontSize: 50.0,
+                          fontSize: 45.0,
                           color: Color(0xff363839),
                         ),
                       ),
@@ -223,7 +223,7 @@ Widget buildFormFieldSelector({String label, String hint, List<String> data, Str
               style: TextStyle(
                 fontFamily: 'Canda Tawa Regular',
                 color: Color(0xff363839),
-                fontSize: 30.0,
+                fontSize: 28.0,
                 height: 1.3,
               ),
             ),
@@ -240,7 +240,7 @@ Widget buildFormFieldSelector({String label, String hint, List<String> data, Str
                   style: TextStyle(
                     fontFamily: 'Canda Tawa Regular',
                     color: Color(0xff363839),
-                    fontSize: 30.0,
+                    fontSize: 28.0,
                   ),
                   items: data.map((String value) {
                     return new DropdownMenuItem<String>(
@@ -296,7 +296,7 @@ Widget buildSubmitFormButton(Function onPressedFunction) => Container(
                       style: TextStyle(
                         fontFamily: 'LeagueSpartan',
                         color: Colors.white,
-                        fontSize: 22.0,
+                        fontSize: 20.0,
                         letterSpacing: 1.5,
                       ),
                     ),

@@ -17,7 +17,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
     var sessionId = await FlutterSession().get('id');
     if (sessionId == null) {
       bool connectedSuccessfully = await Driver().openConnection();
-      Future.delayed(Duration(milliseconds: connectedSuccessfully ? 100 : 2000), () {
+      Future.delayed(Duration(milliseconds: connectedSuccessfully ? 100 : 1000), () {
         Logger().d('Going to Login Form from Loading Screen');
         Navigator.pushReplacementNamed(context, '/login-form');
       });
@@ -36,7 +36,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         Logger().d('Session ID is corrupted. Closing application');
         SystemNavigator.pop();
       }
-      Future.delayed(Duration(milliseconds: 2000), () {
+      Future.delayed(Duration(milliseconds: 1000), () {
         Logger().d('Going to Camera Request from Loading Screen');
         Navigator.pushReplacementNamed(context, '/camera-request');
       });

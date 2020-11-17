@@ -24,7 +24,7 @@ class ReproductiveScreen extends StatelessWidget {
             children: [
               Expanded(
                 flex: 1,
-                child: buildHeader('reproductor', 55.0, () {
+                child: buildHeader('reproductor', 52.0, () {
                   Logger().d('Going back from Reproductive System Screen - On screen back button');
                   Navigator.pushNamed(
                     context,

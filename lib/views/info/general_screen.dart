@@ -81,7 +81,7 @@ class GeneralScreen extends StatelessWidget {
                               Expanded(
                                 flex: 1,
                                 child: Container(
-                                  padding: const EdgeInsets.only(left: 15.0, right: 20.0),
+                                  padding: const EdgeInsets.only(left: 15.0, right: 25.0),
                                   child: Image.asset('images/diary-products.png'),
                                 ),
                               ),
@@ -144,7 +144,7 @@ class GeneralScreen extends StatelessWidget {
                                 child: Container(),
                               ),
                               Expanded(
-                                flex: 7,
+                                flex: 6,
                                 child: Image.asset('images/diary-fridge.png'),
                               ),
                             ],

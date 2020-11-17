@@ -24,7 +24,7 @@ class SkeletalScreen extends StatelessWidget {
             children: [
               Expanded(
                 flex: 1,
-                child: buildHeader('óseo', 65.0, () {
+                child: buildHeader('óseo', 62.0, () {
                   Logger().d('Going back from Skeletal System Screen - On screen back button');
                   Navigator.pushNamed(
                     context,
