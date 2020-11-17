@@ -22,10 +22,6 @@ class GeneralScreen extends StatelessWidget {
           },
           child: Column(
             children: [
-              /*Expanded(
-                flex: 1,
-                child: Container(),
-              ),*/
               Expanded(
                 flex: 10,
                 child: buildExtendedHeader(() {
