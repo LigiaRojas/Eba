@@ -126,7 +126,6 @@ class _UnityScreenState extends State<UnityScreen>{
     );
   }
 
-  // Callback that connects the created controller to the unity controller
   void onUnityCreated(controller) {
     _unityWidgetController = controller;
     String prefabName;
